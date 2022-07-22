@@ -18,7 +18,7 @@ namespace Pedidos.Test.Domain
             int stockTest = 5;
             var factory = new ProductoFactory();
             var producto = factory.Create(nombreTest, 50, 5);
-            
+
             Assert.NotNull(producto);
             Assert.Equal(nombreTest, producto.Nombre);
             Assert.Equal(precioTest, (decimal)producto.PrecioVenta);

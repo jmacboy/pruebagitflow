@@ -36,6 +36,6 @@ namespace Pedidos.Test.Application.Dto
             Assert.Equal(detallePedidoTest.Count, objPedido.Detalle.Count);
         }
 
-        
+
     }
 }

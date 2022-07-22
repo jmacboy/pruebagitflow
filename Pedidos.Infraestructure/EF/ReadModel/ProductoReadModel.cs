@@ -2,7 +2,7 @@
 
 namespace Pedidos.Infraestructure.EF.ReadModel
 {
-    public class ProductoReadModel 
+    public class ProductoReadModel
     {
         public Guid Id { get; set; }
         public string Nombre { get; set; }

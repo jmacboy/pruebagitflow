@@ -17,7 +17,7 @@ namespace Pedidos.Application.UseCases.Command.Productos.UpdateStockWhenItemPedi
             _productoRepository = productoRepository;
         }
 
-        public  async Task Handle(ItemPedidoAgregado notification, CancellationToken cancellationToken)
+        public async Task Handle(ItemPedidoAgregado notification, CancellationToken cancellationToken)
         {
             Producto objProducto = await _productoRepository.FindByIdAsync(notification.ProductoId);
             objProducto.ReducirStock(notification.Cantidad);

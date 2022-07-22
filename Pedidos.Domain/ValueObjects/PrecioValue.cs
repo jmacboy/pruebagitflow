@@ -7,7 +7,7 @@ namespace Pedidos.Domain.ValueObjects
         public decimal Value { get; }
         public PrecioValue(decimal value)
         {
-            if(value < 0)
+            if (value < 0)
             {
                 throw new BussinessRuleValidationException("Price value cannot be negative");
             }

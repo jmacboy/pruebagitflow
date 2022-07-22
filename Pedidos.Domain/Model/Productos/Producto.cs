@@ -8,7 +8,7 @@ namespace Pedidos.Domain.Model.Productos
 {
     public class Producto : AggregateRoot<Guid>
     {
-        public string Nombre { get; private set; 
+        public string Nombre { get; private set; }
 
         public PrecioValue PrecioVenta { get; private set; }
 
