@@ -27,6 +27,16 @@ jobs:
           SSH_KEY: ${{ secrets.SSH_KEY }}
           SSH_HOST: ${{ secrets.HOST }}
 
+      - name: ls -a via ssh
+        uses: fifsky/ssh-action@master
+        with:
+          command: |
+            cd /tmp
+            ls -a
+          host: ${{ secrets.HOST }}
+          user: ${{ secrets.SSH_KEY }}
+          key: ${{ secrets.SSH_KEY}}
+
       - name: Stop the server
         run: ssh staging -vv 'sudo systemctl stop pedidos.service'
 
