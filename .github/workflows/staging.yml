@@ -28,15 +28,13 @@ jobs:
           SSH_HOST: ${{ secrets.HOST }}
 
       - name: ls -a via ssh
-        uses: fifsky/ssh-action@master
+        uses: garygrossgarten/github-action-ssh@release
         with:
-          command: |
-            cd /tmp
-            ls -a
+          command: ls -a
           host: ${{ secrets.HOST }}
-          user: ${{ secrets.SSH_KEY }}
-          key: ${{ secrets.SSH_KEY}}
-
+          username: ${{ secrets.SSH_USER }}
+          privateKey: ${{ secrets.PRIVATE_KEY}}
+    
       - name: Stop the server
         run: ssh staging -vv 'sudo systemctl stop pedidos.service'
 
