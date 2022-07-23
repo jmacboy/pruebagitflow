@@ -35,10 +35,10 @@ jobs:
       - name: Check out the source
         run: ssh staging 'cd /var/www/pedidos-app && git fetch && git stash && git reset --hard origin/main && git stash pop'
       - name: Run migrations
-        run: ssh staging <<EOF
+        run: ssh staging << END
           cd /var/www/pedidos-app
           dotnet ef database update  --project Pedidos.Infraestructure --startup-project Pedidos.WebApi --context Pedidos.Infraestructure.EF.Contexts.WriteDbContext
-          EOF
+          END
       - name: Publish source
         run: ssh staging 'cd /var/www/pedidos-app dotnet publish'
 
