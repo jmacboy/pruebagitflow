@@ -14,11 +14,11 @@ COPY ["Pedidos.Domain/Pedidos.Domain.csproj", "Pedidos.Domain/"]
 COPY ["ShareKernel/ShareKernel.csproj", "ShareKernel/"]
 RUN dotnet restore "Pedidos.WebApi/Pedidos.WebApi.csproj"
 COPY . .
-WORKDIR "/src"
-RUN dotnet build -c Release -o /app/build
+WORKDIR "/src/Pedidos.WebApi"
+RUN dotnet build "Pedidos.WebApi.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish -c Release -o /app/publish
+RUN dotnet publish "Pedidos.WebApi.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
