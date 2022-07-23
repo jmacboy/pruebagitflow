@@ -1,5 +1,4 @@
-﻿using Pedidos.Domain.Model.Pedidos;
-using Pedidos.Domain.Model.Productos;
+﻿using Pedidos.Domain.Model.Productos;
 
 namespace Pedidos.Domain.Factories
 {

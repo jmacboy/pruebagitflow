@@ -17,8 +17,8 @@ namespace Pedidos.Domain.Model.Pedidos
 
         private readonly ICollection<DetallePedido> _detalle;
 
-        public IReadOnlyCollection<DetallePedido> Detalle 
-        { 
+        public IReadOnlyCollection<DetallePedido> Detalle
+        {
             get
             {
                 return new ReadOnlyCollection<DetallePedido>(_detalle.ToList());

@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
 using Moq;
-using Moq.Protected;
 using Pedidos.Application.Dto.Pedido;
 using Pedidos.Application.Services;
 using Pedidos.Application.UseCases.Command.Pedidos.CrearPedido;
@@ -8,7 +7,6 @@ using Pedidos.Domain.Event;
 using Pedidos.Domain.Factories;
 using Pedidos.Domain.Model.Pedidos;
 using Pedidos.Domain.Repositories;
-using Pedidos.Infraestructure.EF.Repository;
 using ShareKernel.Core;
 using System;
 using System.Collections.Generic;

@@ -1,7 +1,5 @@
-﻿using Pedidos.Application.Dto.Pedido;
-using Pedidos.Application.UseCases.Command.Pedidos.CrearPedido;
+﻿using Pedidos.Application.UseCases.Command.Pedidos.CrearPedido;
 using System;
-using System.Collections.Generic;
 using Xunit;
 
 namespace Pedidos.Test.Application.UseCases.Command
@@ -25,6 +23,6 @@ namespace Pedidos.Test.Application.UseCases.Command
         }
 
 
-        
+
     }
 }

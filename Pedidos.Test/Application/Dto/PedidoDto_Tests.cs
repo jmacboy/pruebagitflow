@@ -1,9 +1,5 @@
 ﻿using Pedidos.Application.Dto.Pedido;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace Pedidos.Test.Application.Dto
@@ -36,6 +32,6 @@ namespace Pedidos.Test.Application.Dto
             Assert.Equal(detallePedidoTest.Count, objPedido.Detalle.Count);
         }
 
-        
+
     }
 }

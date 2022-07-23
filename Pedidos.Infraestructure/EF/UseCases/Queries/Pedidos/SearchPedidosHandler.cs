@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Pedidos.Infraestructure.EF.UseCases.Queries.Pedidos
 {
-    public class SearchPedidosHandler : 
+    public class SearchPedidosHandler :
         IRequestHandler<SearchPedidosQuery, ICollection<PedidoDto>>
     {
         private readonly DbSet<PedidoReadModel> _pedidos;

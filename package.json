@@ -1,0 +1,28 @@
+{
+  "name": "pruebagitflow",
+  "version": "1.0.0",
+  "description": "[![.NET](https://github.com/jmacboy/pruebagitflow/actions/workflows/main.yml/badge.svg)](https://github.com/jmacboy/pruebagitflow/actions/workflows/main.yml)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmacboy/pruebagitflow.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jmacboy/pruebagitflow/issues"
+  },
+  "homepage": "https://github.com/jmacboy/pruebagitflow#readme",
+  "devDependencies": {
+    "husky": "^8.0.0",
+    "lint-staged": "^13.0.3"
+  },
+  "lint-staged": {
+    "*.cs": "dotnet-format --include"
+  }
+}

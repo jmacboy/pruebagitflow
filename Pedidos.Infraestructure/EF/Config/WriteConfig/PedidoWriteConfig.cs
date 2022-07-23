@@ -17,7 +17,7 @@ namespace Pedidos.Infraestructure.EF.Config.WriteConfig
             builder.HasKey(x => x.Id);
 
             var nroPedidoConverter = new ValueConverter<NumeroPedido, string>(
-                nroPedidoValue => nroPedidoValue.Value, 
+                nroPedidoValue => nroPedidoValue.Value,
                 nroPedido => new NumeroPedido(nroPedido)
             );
 

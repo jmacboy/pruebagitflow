@@ -27,5 +27,15 @@ namespace Pedidos.WebApi.Controllers
 
             return Ok(id);
         }
+        [HttpPatch]
+        public async Task<IActionResult> Update([FromBody] DeleteProductoCommand command)
+        {
+            bool result = await _mediator.Send(command);
+
+            if (!result)
+                return BadRequest();
+
+            return Ok(result);
+        }
     }
 }

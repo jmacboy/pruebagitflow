@@ -20,7 +20,7 @@ namespace Pedidos.Infraestructure
             services.AddApplication();
             services.AddMediatR(Assembly.GetExecutingAssembly());
 
-            var connectionString = 
+            var connectionString =
                 configuration.GetConnectionString("PedidoDbConnectionString");
 
             //services.AddDbContext<ReadDbContext>(context => 
