@@ -18,10 +18,10 @@ namespace Pedidos.Application.UseCases.Command.Pedidos.CrearPedido
         private readonly IPedidoFactory _pedidoFactory;
         private readonly IUnitOfWork _unitOfWork;
 
-        public CrearPedidoHandler(IPedidoRepository pedidoRepository, 
+        public CrearPedidoHandler(IPedidoRepository pedidoRepository,
             ILogger<CrearPedidoHandler> logger,
-            IPedidoService pedidoService, 
-            IPedidoFactory pedidoFactory, 
+            IPedidoService pedidoService,
+            IPedidoFactory pedidoFactory,
             IUnitOfWork unitOfWork)
         {
             _pedidoRepository = pedidoRepository;
