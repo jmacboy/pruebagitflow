@@ -34,9 +34,12 @@ jobs:
 
       - name: Check out the source
         run: ssh staging 'cd /var/www/pedidos-app && git fetch && git stash && git reset --hard origin/main && git stash pop'
-      - name: Build source
+      - name: Run migrations
         run: ssh staging 'cd /var/www/pedidos-app  && dotnet ef database update  --project Pedidos.Infraestructure --startup-project Pedidos.WebApi --context Pedidos.Infraestructure.EF.Contexts.WriteDbContext && dotnet publish'
-        
+
+      - name: Publish source
+        run: ssh staging 'cd /var/www/pedidos-app dotnet publish'
+
       - name: Start the server
         if: ${{ always() }}
         run: ssh staging 'sudo systemctl start pedidos.service'
