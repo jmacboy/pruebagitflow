@@ -32,16 +32,9 @@ jobs:
       - name: Stop the server
         run: ssh staging 'sudo systemctl stop pedidos.service'
 
-      - name: Check out the source
-        run: ssh staging 'cd /var/www/pedidos-app && git fetch && git stash && git reset --hard origin/main && git stash pop'
-      - name: Run migrations
-        run: ssh staging << END
-          cd /var/www/pedidos-app
-          dotnet ef database update  --project Pedidos.Infraestructure --startup-project Pedidos.WebApi --context Pedidos.Infraestructure.EF.Contexts.WriteDbContext
-          END
-      - name: Publish source
-        run: ssh staging 'cd /var/www/pedidos-app dotnet publish'
-
+      - name: Do deploy
+        run: ssh staging 'cd /var/www/pedidos-app && bash deploy.sh'
+        
       - name: Start the server
         if: ${{ always() }}
         run: ssh staging 'sudo systemctl start pedidos.service'
