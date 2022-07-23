@@ -1,20 +1,18 @@
-name: .NET
+name: Staging deployment
 
 on:
   push:
     branches: [ "main" ]
 
 jobs:
-  build:
+  staging:
 
     runs-on: ubuntu-latest
 
     steps:
-    - name: ls -a via ssh
-      uses: garygrossgarten/github-action-ssh@release
+    - name: Execute SSH commmands on remote server
+      uses: JimCronqvist/action-ssh@master
       with:
-        command: ls -a
-        host: ${{ secrets.HOST }}
-        username: jmacboy
-        passphrase: ${{ secrets.PASSPHRASE }}
-        privateKey: ${{ secrets.SSH_KEY}}
+        hosts: 'user@domain.com'
+        privateKey: ${{ secrets.PRIVATE_KEY }}
+        command: ls -lah
