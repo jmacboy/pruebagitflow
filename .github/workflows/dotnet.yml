@@ -1,0 +1,16 @@
+name: Docker build
+
+on:
+  pull_request:
+    types: [opened, reopened]
+    branches:    
+      - 'develop'
+jobs:
+  build:
+    name: Build with Docker
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Building the image from the Dockerfile
+        uses: ./.github/action-docker
