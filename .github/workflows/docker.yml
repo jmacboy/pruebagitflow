@@ -12,5 +12,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: 5.0.x
+
       - name: Building the image from the Dockerfile
         uses: ./.github/action-docker
