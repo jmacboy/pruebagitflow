@@ -1,10 +1,11 @@
 name: .NET
 
 on:
-  pull_request_target:
-    types: [assigned, opened, synchronize, reopened]
+  pull_request:
+    types: [opened, reopened]
     branches:    
-      - 'features/**'
+      - 'develop'
+      - 'feature/**'
 jobs:
   build:
 
