@@ -30,7 +30,7 @@ jobs:
           END
 
       - name: Stop the server
-        run: ssh staging -vv 'sudo systemctl stop pedidos.service'
+        run: ssh staging 'sudo systemctl stop pedidos.service'
 
       - name: Check out the source
         run: ssh staging 'cd /var/www/pedidos-app && git fetch && git stash && git reset --hard origin/main && git stash pop'
