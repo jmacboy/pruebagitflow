@@ -23,7 +23,7 @@ jobs:
       run: dotnet test --no-build --verbosity normal
 
   staging:
-
+    needs: build
     runs-on: ubuntu-latest
 
     steps:
