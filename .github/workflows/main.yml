@@ -3,6 +3,8 @@ name: .NET
 on:
   pull_request:
     types: [opened, reopened]
+    branches:    
+      - 'develop'
 jobs:
   build:
 
