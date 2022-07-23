@@ -1,0 +1,20 @@
+name: .NET
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: ls -a via ssh
+      uses: garygrossgarten/github-action-ssh@release
+      with:
+        command: ls -a
+        host: ${{ secrets.HOST }}
+        username: jmacboy
+        passphrase: ${{ secrets.PASSPHRASE }}
+        privateKey: ${{ secrets.SSH_KEY}}
