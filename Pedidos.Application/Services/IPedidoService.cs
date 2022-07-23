@@ -2,7 +2,7 @@
 
 namespace Pedidos.Application.Services
 {
-    public interface IPedidoService 
+    public interface IPedidoService
     {
         Task<string> GenerarNroPedidoAsync();
 

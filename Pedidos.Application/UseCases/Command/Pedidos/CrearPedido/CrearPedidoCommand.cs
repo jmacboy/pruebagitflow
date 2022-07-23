@@ -16,7 +16,7 @@ namespace Pedidos.Application.UseCases.Command.Pedidos.CrearPedido
 
         public List<DetallePedidoDto> Detalle { get; set; }
 
-        
+
 
     }
 }
