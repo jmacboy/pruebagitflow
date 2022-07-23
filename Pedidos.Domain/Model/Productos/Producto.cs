@@ -45,5 +45,11 @@ namespace Pedidos.Domain.Model.Productos
             AddDomainEvent(evento);
         }
 
+        public void DeleteProducto()
+        {
+            var evento = new ProductoEliminado(Id);
+            AddDomainEvent(evento);
+        }
+
     }
 }
