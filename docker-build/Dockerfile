@@ -4,10 +4,11 @@ WORKDIR /app
 
 FROM mcr.microsoft.com/dotnet/sdk:${NET_IMAGE} AS build
 WORKDIR /src
-RUN ls
 
-COPY ["Pedidos.WebApi", "./Pedidos.WebApi/"]
-COPY ["ShareKernel", "./ShareKernel/"]
+COPY . .
+
+COPY ["./Pedidos.WebApi", "./Pedidos.WebApi/"]
+COPY ["./ShareKernel", "./ShareKernel/"]
 RUN dotnet restore "Pedidos.WebApi/Pedidos.WebApi.csproj"
 COPY . .
 WORKDIR "/src/Pedidos.WebApi"
