@@ -18,6 +18,7 @@ jobs:
         with:
           source: ${{ github.workspace }}/docker-deploy/Dockerfile
           target: ${{ github.workspace }}/Dockerfile
+          flags: -fr
       - name: Build and push Docker images
         uses: docker/build-push-action@v1
         with:
