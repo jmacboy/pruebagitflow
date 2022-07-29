@@ -16,8 +16,8 @@ jobs:
       - name: Copy Docker file
         uses: canastro/copy-action@0.0.2
         with:
-          source: ${GITHUB_WORKSPACE}/docker-deploy/Dockerfile
-          target: ${GITHUB_WORKSPACE}/Dockerfile
+          source: ${{ github.workspace }}/docker-deploy/Dockerfile
+          target: ${{ github.workspace }}/Dockerfile
       - name: Build and push Docker images
         uses: docker/build-push-action@v1
         with:
