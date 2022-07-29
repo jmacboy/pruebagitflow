@@ -1,4 +1,4 @@
 name: "Using Docker"
 runs:
   using: "docker"
-  image: "../../Dockerfile"
+  image: "../../docker-build/Dockerfile"
