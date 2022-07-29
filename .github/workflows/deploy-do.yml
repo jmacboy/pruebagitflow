@@ -16,8 +16,8 @@ jobs:
       - name: Copy Docker file
         uses: canastro/copy-action@0.0.2
         with:
-          source: docker-deploy/Dockerfile
-          target: Dockerfile
+          source: /docker-deploy/Dockerfile
+          target: /Dockerfile
       - name: Build and push Docker images
         uses: docker/build-push-action@v1
         with:
