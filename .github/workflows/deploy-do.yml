@@ -14,11 +14,7 @@ jobs:
       - name: Checkout files    
         uses: actions/checkout@v2
       - name: Copy Docker file
-        uses: canastro/copy-action@0.0.2
-        with:
-          source: ${{ github.workspace }}/docker-deploy/Dockerfile
-          target: ${{ github.workspace }}/Dockerfile
-          flags: -fr
+        run: cp ${{ github.workspace }}/docker-deploy/Dockerfile ${{ github.workspace }}/Dockerfile
       - name: Build and push Docker images
         uses: docker/build-push-action@v1
         with:
